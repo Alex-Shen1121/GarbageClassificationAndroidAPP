@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.finalproject.BaseActivity
+import com.example.finalproject.Main.MainPage
 import com.example.finalproject.R
 import kotlinx.android.synthetic.main.activity_login.*
 import java.io.*
@@ -32,8 +33,7 @@ class LoginActivity : BaseActivity() {
         }
 
         //加入默认账号密码
-        //管理员账号：admin 密码：123456
-        //学生账号：admin 密码：123456
+        //账号：admin 密码：123456
         addDefaultAccount()
 
         login.setOnClickListener() {
@@ -52,23 +52,10 @@ class LoginActivity : BaseActivity() {
                 } else {
                     editor.clear()
                 }
-                //进入管理员界面
-                //有且仅有一个管理员账号
-                if (account == "admin") {
-                    editor.putString("identity", "管理员")
-                    editor.apply()
-                    /*val intent = Intent(this, AdminMenu::class.java)
-                    startActivity(intent)*/
-                    finish()
-                }
-                //其他全部进入学生界面
-                else {
-                    editor.putString("identity", "学生")
-                    editor.apply()
-                    /* val intent = Intent(this, StudentMenu::class.java)
-                     startActivity(intent)*/
-                    /*finish()*/
-                }
+                val intent = Intent(this, MainPage::class.java)
+                startActivity(intent)
+                finish()
+
             } else {
                 AlertDialog.Builder(this).apply {
                     setTitle("登陆失败")
