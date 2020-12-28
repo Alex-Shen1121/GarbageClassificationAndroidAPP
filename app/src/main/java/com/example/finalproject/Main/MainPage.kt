@@ -5,12 +5,10 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.MediaController
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -188,8 +186,16 @@ class MainPage : AppCompatActivity() {
         }
 
         changePlace.setOnClickListener(){
-            val intent= Intent(this,PlaceActivity::class.java)
+            val intent= Intent(this, PlaceActivity::class.java)
             startActivity(intent)
+        }
+
+        givePoint.setOnClickListener(){
+            launchAppDetail("com.bitmain.btccom","com.huawei.appmarket")
+        }
+
+        aboutUs.setOnClickListener(){
+            
         }
 
     }
@@ -225,6 +231,21 @@ class MainPage : AppCompatActivity() {
             if (Ltitles[i] == stitle) {
                 tabIcon.setImageResource(Limg[i])
             }
+        }
+    }
+
+    fun launchAppDetail(appPkg: String, marketPkg: String?) {
+        try {
+            if (TextUtils.isEmpty(appPkg)) return
+            val uri = Uri.parse("market://details?id=$appPkg")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            if (!TextUtils.isEmpty(marketPkg)) {
+                intent.setPackage(marketPkg)
+            }
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }
