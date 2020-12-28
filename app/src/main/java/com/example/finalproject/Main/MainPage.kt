@@ -52,6 +52,9 @@ class MainPage : AppCompatActivity() {
         button1.setImageResource(R.drawable.pic12)
         text1.textSize = 20F
         text1.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+        column1.visibility=View.VISIBLE
+        column2.visibility=View.GONE
+        column3.visibility=View.GONE
 
         val uri = Uri.parse("android.resource://$packageName/${R.raw.video}")
         videoView.setVideoURI(uri)
@@ -121,6 +124,52 @@ class MainPage : AppCompatActivity() {
                 //重新选中
             }
         })
+
+        button1.setOnClickListener(){
+            titleText.text = "垃圾分类"
+            button3.setImageResource(R.drawable.pic31)
+            button2.setImageResource(R.drawable.pic21)
+            button1.setImageResource(R.drawable.pic12)
+            text1.textSize = 20F
+            text1.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+            column1.visibility=View.VISIBLE
+            column2.visibility=View.GONE
+            column3.visibility=View.GONE
+            if(videoView.isPlaying){
+                videoView.pause()
+            }
+        }
+
+        button2.setOnClickListener(){
+            titleText.text = "分类百科"
+            button1.setImageResource(R.drawable.pic11)
+            button3.setImageResource(R.drawable.pic31)
+            button2.setImageResource(R.drawable.pic22)
+            text2.textSize = 20F
+            text2.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+            column2.visibility=View.VISIBLE
+            column1.visibility=View.GONE
+            column3.visibility=View.GONE
+            if(videoView.isPlaying){
+                videoView.pause()
+            }
+        }
+
+        button3.setOnClickListener(){
+            titleText.text = "设置"
+            button1.setImageResource(R.drawable.pic11)
+            button2.setImageResource(R.drawable.pic21)
+            button3.setImageResource(R.drawable.pic32)
+            text3.textSize = 20F
+            text3.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+            column3.visibility=View.VISIBLE
+            column2.visibility=View.GONE
+            column1.visibility=View.GONE
+            if(videoView.isPlaying){
+                videoView.pause()
+            }
+        }
+
 
     }
 

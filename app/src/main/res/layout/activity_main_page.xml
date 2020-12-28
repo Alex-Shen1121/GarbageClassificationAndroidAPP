@@ -8,13 +8,13 @@
     tools:context=".Main.MainPage">
 
     <TextView
+        android:id="@+id/titleText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_alignParentTop="true"
+        android:gravity="center"
         android:padding="10dp"
         android:text="标题"
-        android:id="@+id/titleText"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -22,12 +22,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/titleText"
         android:orientation="vertical"
-        android:visibility="visible"
-        android:layout_below="@+id/titleText">
+        android:visibility="visible">
 
         // 首页
         <LinearLayout
+            android:id="@+id/column1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -38,29 +39,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/home" />
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-                
+                    android:layout_weight="1" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/searchbox"
                     android:clickable="true"
-                    android:focusable="true" />
-                
+                    android:focusable="true"
+                    android:src="@drawable/searchbox" />
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
+                    android:layout_weight="1" />
 
 
             </LinearLayout>
@@ -68,50 +68,46 @@
             <VideoView
                 android:id="@+id/videoView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
         //分类百科
         <LinearLayout
+            android:id="@+id/column2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!--
-    app:tabIndicatorColor=""   指示器颜色
-    app:tabIndicatorHeight=""  指示器高度，设置为0就是没有指示器
-    app:tabTextColor=""    Tab文本默认颜色
-    app:tabSelectedTextColor=""     Tab文本被选中后的颜色
-    app:tabTextAppearance=""      为Tab文本设置样式，一般是需要为Tab加图标时使用
-    app:tabMode=""  只有两个值：fixed、scrollable
-    其中 fixed用于标题栏少的情况，每个Tab可以平分屏幕宽度
-    其中 scrollable用于标题栏多出屏幕的情况，如果标题栏少的时候用很难看，占不满屏幕
-    app:tabGravity="center" 整体居中，不可与上共用
-    app:tabBackground=""    TabLayout背景，和android:background=""效果一样
-    app:tabGravity=""    对齐方式:  居中显示center、fill填满
-    -->
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:tabMode="fixed"
                 app:tabIndicatorColor="@color/black"
-                app:tabTextColor="@android:color/black"
+                app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/purple_700"
-                />
+                app:tabTextColor="@android:color/black" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
 
         </LinearLayout>
 
+        //设置
+        <LinearLayout
+            android:id="@+id/column3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -135,19 +131,19 @@
                 android:padding="20dp">
 
                 <ImageView
+                    android:id="@+id/button1"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:clickable="true"
-                    android:id="@+id/button1"
-                    android:src="@drawable/pic11"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:src="@drawable/pic11" />
 
                 <TextView
+                    android:id="@+id/text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:id="@+id/text1"
                     android:text="首页" />
 
             </LinearLayout>
@@ -160,19 +156,19 @@
                 android:padding="20dp">
 
                 <ImageView
+                    android:id="@+id/button2"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:clickable="true"
-                    android:id="@+id/button2"
-                    android:src="@drawable/pic21"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:src="@drawable/pic21" />
 
                 <TextView
+                    android:id="@+id/text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:id="@+id/text2"
                     android:text="分类百科" />
 
 
@@ -186,19 +182,19 @@
                 android:padding="20dp">
 
                 <ImageView
+                    android:id="@+id/button3"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:id="@+id/button3"
                     android:clickable="true"
-                    android:src="@drawable/pic31"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:src="@drawable/pic31" />
 
                 <TextView
+                    android:id="@+id/text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:id="@+id/text3"
                     android:text="设置" />
 
 
