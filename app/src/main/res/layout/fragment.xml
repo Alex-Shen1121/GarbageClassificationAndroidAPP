@@ -9,8 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/picture"
-        android:src="@drawable/frag1" />
+        android:id="@+id/picture" />
 
     <TextView
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
         android:paddingStart="15dp"
         android:paddingTop="25dp"
         android:id="@+id/title1"
-        android:text="可回收物是指"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -29,7 +27,6 @@
         android:paddingStart="30dp"
         android:paddingTop="10dp"
         android:id="@+id/task1"
-        android:text="废纸张、废塑料、废玻璃制品、废金属、废织物等适宜回收、可循环利用的生活废弃品。"
         android:textSize="14sp" />
 
     <TextView
@@ -38,7 +35,6 @@
         android:paddingStart="15dp"
         android:paddingTop="40dp"
         android:id="@+id/title2"
-        android:text="可回收物投放要求"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -47,7 +43,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="1. 轻投轻放\n2. \n\n\n"
         android:paddingStart="30dp"
         android:paddingTop="10dp"
         android:id="@+id/task2"
