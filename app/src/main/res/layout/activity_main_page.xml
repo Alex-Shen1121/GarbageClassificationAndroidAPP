@@ -15,7 +15,8 @@
         android:padding="10dp"
         android:text="标题"
         android:id="@+id/titleText"
-        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -29,7 +30,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <ImageView
@@ -67,6 +69,46 @@
                 android:id="@+id/videoView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        //分类百科
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--
+    app:tabIndicatorColor=""   指示器颜色
+    app:tabIndicatorHeight=""  指示器高度，设置为0就是没有指示器
+    app:tabTextColor=""    Tab文本默认颜色
+    app:tabSelectedTextColor=""     Tab文本被选中后的颜色
+    app:tabTextAppearance=""      为Tab文本设置样式，一般是需要为Tab加图标时使用
+    app:tabMode=""  只有两个值：fixed、scrollable
+    其中 fixed用于标题栏少的情况，每个Tab可以平分屏幕宽度
+    其中 scrollable用于标题栏多出屏幕的情况，如果标题栏少的时候用很难看，占不满屏幕
+    app:tabGravity="center" 整体居中，不可与上共用
+    app:tabBackground=""    TabLayout背景，和android:background=""效果一样
+    app:tabGravity=""    对齐方式:  居中显示center、fill填满
+    -->
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:tabMode="fixed"
+                app:tabIndicatorColor="@color/black"
+                app:tabTextColor="@android:color/black"
+                app:tabSelectedTextColor="@color/purple_700"
+                />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
         </LinearLayout>
 
