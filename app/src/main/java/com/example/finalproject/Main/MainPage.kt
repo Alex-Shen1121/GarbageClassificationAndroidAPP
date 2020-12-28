@@ -1,5 +1,7 @@
 package com.example.finalproject.Main
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
@@ -55,6 +57,9 @@ class MainPage : AppCompatActivity() {
         column1.visibility = View.VISIBLE
         column2.visibility = View.GONE
         column3.visibility = View.GONE
+        val prefs = getSharedPreferences("current_place", Context.MODE_PRIVATE)
+        val current_place = prefs.getString("place", null)
+        currentPlace.text = current_place
 
         val uri = Uri.parse("android.resource://$packageName/${R.raw.video}")
         videoView.setVideoURI(uri)
@@ -183,7 +188,8 @@ class MainPage : AppCompatActivity() {
         }
 
         changePlace.setOnClickListener(){
-
+            val intent= Intent(this,PlaceActivity::class.java)
+            startActivity(intent)
         }
 
     }

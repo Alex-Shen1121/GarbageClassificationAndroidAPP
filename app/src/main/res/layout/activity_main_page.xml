@@ -125,9 +125,9 @@
                     android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:text="切换地区"/>
 
                 <TextView
@@ -135,15 +135,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
+                    android:id="@+id/currentPlace"
                     android:layout_gravity="center_vertical"
-                    android:text="当前地区"/>
+                    android:text="深圳市"/>
 
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="#676767"/>
 
             <LinearLayout
@@ -165,9 +166,9 @@
                     android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:text="给我们评分"/>
 
 
@@ -175,7 +176,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="#676767"/>
 
             <LinearLayout
@@ -197,9 +198,9 @@
                     android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:text="关于我们"/>
 
 
@@ -207,7 +208,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="#676767"/>
 
             <LinearLayout
@@ -229,9 +230,9 @@
                     android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:text="用户协议与隐私协议"/>
 
 
@@ -240,7 +241,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="#676767"/>
 
             <LinearLayout
@@ -262,9 +263,9 @@
                     android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:text="权限管理"/>
 
 
@@ -272,8 +273,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="#676767"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -293,9 +295,9 @@
                     android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:text="退出登录"/>
 
 
@@ -303,7 +305,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="#676767"/>
 
 
