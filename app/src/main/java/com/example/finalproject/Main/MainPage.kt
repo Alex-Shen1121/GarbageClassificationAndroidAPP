@@ -195,7 +195,8 @@ class MainPage : AppCompatActivity() {
         }
 
         aboutUs.setOnClickListener(){
-            
+            val intent= Intent(this, AboutUsActivity::class.java)
+            startActivity(intent)
         }
 
     }
