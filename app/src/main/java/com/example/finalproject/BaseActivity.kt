@@ -41,7 +41,7 @@ open class BaseActivity : AppCompatActivity() {
         override fun onReceive(context: Context, intent: Intent) {
             android.app.AlertDialog.Builder(context).apply {
                 setTitle("Warning")
-                setMessage("强制下线。请重新登录。")
+                setMessage("请重新登录。")
                 setCancelable(false)
                 setPositiveButton("OK") { _, _ ->
                     ActivityCollector.finishAll()

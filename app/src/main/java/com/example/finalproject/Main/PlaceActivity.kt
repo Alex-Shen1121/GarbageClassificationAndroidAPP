@@ -4,12 +4,13 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.finalproject.BaseActivity
 import com.example.finalproject.R
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main_page.*
 import kotlinx.android.synthetic.main.activity_place.*
 
-class PlaceActivity : AppCompatActivity() {
+class PlaceActivity : BaseActivity() {
 
     private val placeList = ArrayList<String>()
 

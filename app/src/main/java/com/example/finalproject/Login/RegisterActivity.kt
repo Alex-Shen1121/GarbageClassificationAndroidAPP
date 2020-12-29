@@ -3,6 +3,7 @@ package com.example.finalproject.Login
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.finalproject.BaseActivity
 import com.example.finalproject.R
 import kotlinx.android.synthetic.main.activity_register.*
 import java.io.BufferedReader
@@ -10,7 +11,7 @@ import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
     private val accountList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {

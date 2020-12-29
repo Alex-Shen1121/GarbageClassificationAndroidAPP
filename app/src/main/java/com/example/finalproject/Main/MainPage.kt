@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.finalproject.BaseActivity
 import com.example.finalproject.Main.Fragment.Fragment0
 import com.example.finalproject.Main.Fragment.Fragment1
 import com.example.finalproject.Main.Fragment.Fragment2
@@ -24,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_main_page.*
 import kotlinx.android.synthetic.main.items.*
 
 
-class MainPage : AppCompatActivity() {
+class MainPage : BaseActivity() {
     val Lfragments: Array<Fragment> = arrayOf<Fragment>(
         Fragment0(),
         Fragment1(),
@@ -191,12 +192,31 @@ class MainPage : AppCompatActivity() {
         }
 
         givePoint.setOnClickListener(){
-            launchAppDetail("com.bitmain.btccom","com.huawei.appmarket")
+            launchAppDetail("com.bitmain.btccom", "com.huawei.appmarket")
         }
 
         aboutUs.setOnClickListener(){
             val intent= Intent(this, AboutUsActivity::class.java)
             startActivity(intent)
+        }
+
+        agreement.setOnClickListener(){
+            val intent= Intent(this, AgreementActivity::class.java)
+            startActivity(intent)
+        }
+
+        applyRight.setOnClickListener(){
+            val intent = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            val uri = Uri.fromParts("package", packageName, null)
+            intent.data = uri
+            startActivity(intent)
+        }
+
+        Exit.setOnClickListener(){
+            val intent = Intent("com.example.experiment3.FORCE_OFFLINE")
+            intent.setPackage(packageName)
+            sendBroadcast(intent)
         }
 
     }
