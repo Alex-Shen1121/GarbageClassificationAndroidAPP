@@ -2,10 +2,13 @@ package com.example.finalproject.Main
 
 import android.content.ContentValues
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalproject.BaseActivity
 import com.example.finalproject.Main.database.myDatabaseHelper
 import com.example.finalproject.R
 import kotlinx.android.synthetic.main.activity_search_box.*
+import kotlinx.android.synthetic.main.activity_search_box.back
+import kotlinx.android.synthetic.main.activity_search_box.recyclerView
 
 class SearchBoxActivity : BaseActivity() {
 
@@ -18,6 +21,27 @@ class SearchBoxActivity : BaseActivity() {
 
         dbHelper.writableDatabase
         addDefaultData()
+
+        searhResult.setOnClickListener(){
+            val targetItem=target.text.toString()
+            val searchList = ArrayList<search_result>()
+
+            val db=dbHelper.writableDatabase
+            val cursor=db.rawQuery("select * from TrashTable where name like '%$targetItem%'",null)
+
+            if(cursor.moveToFirst()){
+                do{
+                    val name=cursor.getString(cursor.getColumnIndex("name"))
+                    val type=cursor.getString(cursor.getColumnIndex("type"))
+                    searchList.add(search_result(name,type))
+                }while (cursor.moveToNext())
+            }
+
+            val layoutManager = LinearLayoutManager(this)
+            recyclerView.layoutManager = layoutManager
+            val adapter1 = search_Adapter(searchList)
+            recyclerView.adapter = adapter1
+        }
 
         back.setOnClickListener(){
             finish()

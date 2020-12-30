@@ -28,7 +28,7 @@
             android:layout_alignParentTop="true"
             android:gravity="center"
             android:padding="10dp"
-            android:text="隐私协议"
+            android:text="垃圾分类"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -44,6 +44,7 @@
             android:layout_weight="5"
             android:layout_height="wrap_content"
             android:background="#BCB9B9"
+            android:id="@+id/target"
             android:hint="请输入垃圾名称:"
             android:textColor="#FFFFFF"/>
 
@@ -51,6 +52,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="40dp"
+            android:id="@+id/searhResult"
             android:text="搜索"/>
 
     </LinearLayout>
@@ -62,7 +64,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="搜索历史："/>
+        android:text="搜索结果："/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
