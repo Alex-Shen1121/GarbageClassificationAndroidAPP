@@ -219,6 +219,11 @@ class MainPage : BaseActivity() {
             sendBroadcast(intent)
         }
 
+        search.setOnClickListener(){
+            val intent= Intent(this, SearchBoxActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onDestroy() {

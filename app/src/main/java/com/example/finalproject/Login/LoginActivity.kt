@@ -54,6 +54,7 @@ class LoginActivity : BaseActivity() {
                 }
                 val intent = Intent(this, MainPage::class.java)
                 startActivity(intent)
+                editor.apply()
                 finish()
 
             } else {

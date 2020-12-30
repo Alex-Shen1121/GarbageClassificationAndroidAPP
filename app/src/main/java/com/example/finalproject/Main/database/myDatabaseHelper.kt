@@ -9,7 +9,7 @@ class myDatabaseHelper(val context: Context,name:String,version:Int):
 
     private val createTrashTable="create table TrashTable ("+
             " name text primary key,"+
-            "type integer)"
+            "type text)"
 
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL(createTrashTable)

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
-        <activity android:name=".Main.AgreementActivity"></activity>
+        <activity android:name=".Main.SearchBoxActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".Main.AgreementActivity" />
         <activity android:name=".Main.AboutUsActivity" />
         <activity android:name=".Main.PlaceActivity" />
         <activity android:name=".Main.MainPage" />
